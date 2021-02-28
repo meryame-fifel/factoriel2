@@ -61,4 +61,8 @@ public class PublicationController {
 		model.addAttribute("publications", pubRepo.findAll());   
 		return "publications";  
 	}
+	@GetMapping(value = "/hello")
+	public String sayhello() {
+		return "helooooo";
+	}
 }
