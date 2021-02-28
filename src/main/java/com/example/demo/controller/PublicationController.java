@@ -63,6 +63,6 @@ public class PublicationController {
 	}
 	@GetMapping(value = "/hello")
 	public String sayhello() {
-		return "helooooo";
+		return "helooo";
 	}
 }
