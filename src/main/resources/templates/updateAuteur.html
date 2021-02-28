@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Add author</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+	<h1>Create an author:</h1>
+
+
+	<form action="#" th:action="@{/update/{id}(id=${auteur.id})}" th:object="${auteur}" method="post">
+		<div class="form-group row">
+			<label for="nom" class="col-sm-2 col-form-label">Nom</label> 
+			<input type="text" th:field="*{nom}" id="nom" placeholder="nom"> 
+			<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"> </span> 
+		</div>
+	<div class="form-group row">
+		<label for="prenom" class="col-sm-2 col-form-label">Prenom</label> 
+		<input type="text" th:field="*{prenom}" id="prenom" placeholder="prenom"> 
+		<span th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"> </span> 
+	</div>
+	<div class="form-group row">
+		<label for="dateN" class="col-sm-2 col-form-label">Date de naissance</label> 
+		<input type="text" th:field="*{dateN}" id="dateN" placeholder="dateN"> 
+		<span th:if="${#fields.hasErrors('dateN')}" th:errors="*{dateN}"> </span>
+	</div>
+	<div class="form-group row"> 
+		<label for="adresse" class="col-sm-2 col-form-label">Adresse</label> 
+		<input type="text" th:field="*{adresse}" id="adresse" placeholder="adresse"> 
+		<span th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"> </span> 
+	</div>
+	<div class="form-group row">
+		<label for="grade" class="col-sm-2 col-form-label">Grade</label> 
+		<input type="text" th:field="*{grade}" id="grade" placeholder="grade"> 
+		<span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"> </span>
+	</div> 
+	<div class="form-group row">
+		<label for="organisme" class="col-sm-2 col-form-label">organisme</label> 
+		<input type="text" th:field="*{organisme}" id="organisme" placeholder="organisme"> 
+		<span th:if="${#fields.hasErrors('organisme')}" th:errors="*{organisme}"> </span>
+	</div> 
+		
+		<input type="submit" class="btn btn-primary" value="save">
+	</form>
+</div> 
+
+	<br/>
+</body>
+</html>

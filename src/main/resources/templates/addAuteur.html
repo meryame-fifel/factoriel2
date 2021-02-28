@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Add author</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	<h1>Create an author:</h1>
+
+<div>
+	<form action="#" th:action="@{/addAuteur}" th:object="${auteur}" method="post">
+		<label for="nom">Nom</label> 
+		<input class="form-control" type="text" th:field="*{nom}" id="nom" placeholder="nom"> 
+		<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"> </span> 
+		<label for="prenom">Prenom</label> 
+		<input class="form-control" type="text" th:field="*{prenom}" id="prenom" placeholder="prenom"> 
+		<span th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"> </span> 
+		<label for="dateN">Date de naissance</label> 
+		<input class="form-control" type="text" th:field="*{dateN}" id="dateN" placeholder="dateN"> 
+		<span th:if="${#fields.hasErrors('dateN')}" th:errors="*{dateN}"> </span> 
+		<label for="adresse">Adresse</label> 
+		<input class="form-control" type="text" th:field="*{adresse}" id="adresse" placeholder="adresse"> 
+		<span th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"> </span> 
+		<label for="grade">Grade</label> 
+		<input class="form-control" type="text" th:field="*{grade}" id="grade" placeholder="grade"> 
+		<span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"> </span> 
+		<label for="organisme">organisme</label> 
+		<input class="form-control" type="text" th:field="*{organisme}" id="organisme" placeholder="organisme"> 
+		<span th:if="${#fields.hasErrors('organisme')}" th:errors="*{organisme}"> </span> 
+		
+		<input class="btn btn-primary" type="submit" value="Ajouter un auteur">
+	</form>
+</div>
+
+
+	<br />
+</body>
+</html>
